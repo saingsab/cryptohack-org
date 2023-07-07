@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 ascii_converter = "0.3.0"
 hex = "0.4.3"
+base64 = "0.21.2"
