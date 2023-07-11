@@ -26,11 +26,37 @@ fn convert_hex_to_decimals(_v: &str) {
     println!("{}", string); 
 }
 
-fn main() {
+// fn main() {
 
-    // let v = vec![72, 69, 76, 76, 79];
-    // let v = vec![0x48, 0x45, 0x4c, 0x4c, 0x4f];
-    let input = "48454c4c4f";
-    ;
-    convert_hex_to_decimals("d");
+//     // let v = vec![72, 69, 76, 76, 79];
+//     // let v = vec![0x48, 0x45, 0x4c, 0x4c, 0x4f];
+//     let input = "48454c4c4f";
+//     ;
+//     convert_hex_to_decimals("d");
+// }
+fn three_vowels(word: &str) -> bool {
+    let mut vowel_count = 0;
+    for c in word.chars() {
+        match c {
+            'a' | 'e' | 'i' | '0' | 'u' => {
+               vowel_count += 1;
+               if vowel_count >= 3 {
+                    return true;
+               } 
+            }
+            _ => vowel_count = 0 
+        }
+    }
+    false
+}
+
+fn main() {
+    let sentence_string = 
+        "Once upon a time, there was a friendly curious crab named Ferris".to_string();
+    
+    for word in sentence_string.split(' ') {
+        if three_vowels(word) {
+            println!("{} has three consecutive vowels!", word);
+        }
+    }
 }
